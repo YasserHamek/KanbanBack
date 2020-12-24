@@ -1,201 +1,40 @@
 # KanbanBack 
 The API is deployed with heroku and described with swagger at this link : https://kanban-back-spring.herokuapp.com/swagger-ui.html (the page may take some time to charge).
 
-To try the application locally `Run AS -> Java Application` the class `app/Application.java` on Eclipse.
+To try the application locally :
 
-- Run the database script `/hsqldb/run_server.sh`
-- `Run AS -> Java Application` the class `app/Application.java` on Eclipse.
+- Run the database script `./hsqldb/run_server.sh`
+- `Run AS -> Java Application` the class `./app/Application.java` on Eclipse.
 
-# 
-
-- 
-
-## User
+## Item
 
 ## VARIABLES
 
-- userId
-- userBasket
-- userName
-- userPassword
-- userRole
+- id
+- name
+- heading
+- deadline
+- user
+- requiredTime
+- tagsList
+- place
+- url
+- description
 
 ## URL
 
-**Get** All Users :
+**Get** All Items:
 
-- **GET** : http://localhost:8080/cafeteria/user/
+- **GET** : http://localhost:8080/item/
 
-**Post** One User :
+**Post** One item :
 
 - **POST** : http://localhost:8080/cafeteria/user/
 
 **Headers:**
 
 - Content-Type: application/json
-
-**Query Params**
-
-**KEY** -- **VALUE**
-
-- name -- chosenName
-- password -- chosenPassword
-- role -- chosenRole
-
-**Delete** All Users :
-
-- **DELETE** : http://localhost:8080/cafeteria/user/
-
-**Get** one User :
-
-- **GET** : http://localhost:8080/cafeteria/user/USERID/
-
-**Modify** One User :
-
-- **PUT** : http://localhost:8080/cafeteria/user/USERID/
-
-**Headers:**
-
-- Content-Type: application/json
-
-**Query Params**
-
-**KEY** -- **VALUE**
-
-- newName -- chosenName
-- newPassword -- chosenPassword
-- newRole -- chosenRole
-
-**Delete** one User :
-
-- **DELETE** : http://localhost:8080/cafeteria/user/USERID/
-
-## Product
-
-## VARIABLES
-
-- productId
-- productName
-- price
-- basket
-
-## URL
-
-**Get** All Products :
-
-- **GET** : http://localhost:8080/cafeteria/products/
-
-**Delete** All Products :
-
-- **DELETE** : http://localhost:8080/cafeteria/products/
-
-**Post** One Product :
-
-- **POST** : http://localhost:8080/cafeteria/products/
-
-**Headers:**
-
-- Content-Type: application/json
-
-**Query Params**
-
-**KEY** -- **VALUE**
-
-- name -- chosenName
-- price -- chosenPrice
-
-**Get** one Product :
-
-- **GET** : http://localhost:8080/cafeteria/products/PRODUCTID
-
-**Delete** one Product :
-
-- **DELETE** : http://localhost:8080/cafeteria/products/PRODUCRID
-
-**Modify** One Product :
-
-- **PUT** : http://localhost:8080/cafeteria/products/PRODUCTID
-
-**Headers:**
-
-- Content-Type: application/json
-
-**Query Params**
-
-**KEY** -- **VALUE**
-
-- newName -- chosenName
-- newPrice -- chosenPrice
-
-## Basket
-
-## VARIABLES
-
-- basketId
-- totalPrice
-- products
-- user
-
-## URL
-
-**Get** All Basket Products :
-
-- **GET** : http://localhost:8080/cafeteria/USERID/basket/
-
-**Delete** All Basket Products :
-
-- **DELETE** : http://localhost:8080/cafeteria/USERID/basket/
-
-**Post** Many Products :
-
-- **POST** : http://localhost:8080/cafeteria/USERID/basket/
-
-**Headers:**
-
-- Content-Type: application/json
-
-**Query Params **
-
-**KEY** -- **VALUE**
-
-productIdArray -- firstChosenID, secondChosenID,....
-
-**Get** one Basket Product :
-
-- **GET** : http://localhost:8080/cafeteria/USERID/basket/PRODUCTID
-
-**Post** One Product :
-
-- **POST** : http://localhost:8080/cafeteria/USERID/basket/PRODUCTID
-
-**Modify** One Product :
-
-- **PUT** : http://localhost:8080/cafeteria/USERID/basket/PRODUCTID
-
-**Headers:**
-
-- Content-Type: application/json
-
-**Query Params**
-
-**KEY** -- **VALUE**
-
-- newName -- chosenName
-- newPrice -- chosenPrice
-
-**Delete** one Product :
-
-- **DELETE** : http://localhost:8080/cafeteria/USERID/basket/PRODUCTID
-
-Post One Item method : 
-
-- Post : http://localhost:8080/Item/
-
-Headers:
-
-- Content-Type: application/json
-
-Body:
+- Body:
 
 ```
 {
@@ -226,17 +65,17 @@ Body:
 }
 ```
 
-Get One item method :
+**Modify** the state of an Item:
 
-- GET : http://localhost:8080/item/id
+- **PUT** : http://localhost:8080/item?itemId=ITEMID&itemHeading=ITEMNEWSTATE
 
-Delete One Item method : 
+**Delete** one Item :
 
-- Delete : http://localhost:8080/Item/id
+- **DELETE** : http://localhost:8080/item?itemId=ITEMID
 
-Aspect Oriented Programming : 
+### **Aspect Oriented Programming :** 
 
-- Before and after each call of the rest method a logging will be printed in the console.
+- Before and after each call of methods a logging will be printed in the console.
 
 # Getting Started
 
