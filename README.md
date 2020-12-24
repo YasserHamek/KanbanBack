@@ -3,8 +3,8 @@ The API is deployed with heroku and described with swagger at this link : https:
 
 To try the application locally :
 
-- Run the database script `./hsqldb/run_server.sh`
-- `Run AS -> Java Application` the class `./app/Application.java` on Eclipse.
+- Run the database script `/hsqldb/run_server.sh`
+- `Run AS -> Java Application` the class `/app/Application.java` on Eclipse.
 
 ## Item
 
